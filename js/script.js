@@ -1,3 +1,6 @@
+const teamContainer = document.querySelector('.team-container');
+console.log(teamContainer);
+
 const team = [
   {
     name: 'Wayne Barnett',
@@ -31,11 +34,13 @@ const team = [
   },
 ];
 
+teamContainer.style.flexDirection = ('column');
+
 //stampare i membri in console
 for(let i = 0; i < team.length; i++){
   const currentMember = team[i];
-  console.log(`Membro n° ${i + 1}`);
-  console.log(`Nome: ${currentMember.name}`);
-  console.log(`Ruolo: ${currentMember.role}`);
-  console.log(`Immagine: ${currentMember.image}`);
+
+  const div = document.createElement('div');
+  div.innerHTML = `<h3>Membro: ${currentMember.name}, ${currentMember.role}, ${currentMember.image}.</h3>`;
+  teamContainer.appendChild(div);
 }
